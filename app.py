@@ -6,8 +6,15 @@ import matplotlib.pyplot as plt
 # -----------------------------
 # Load models & preprocessors
 # -----------------------------
-svm_model = pickle.load(open("models/svm_model.pkl", "rb"))
-dt_model = pickle.load(open("models/dt_model.pkl", "rb"))
+import os
+import pickle
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+svm_model = pickle.load(open(os.path.join(BASE_DIR, "models", "svm_model.pkl"), "rb"))
+dt_model = pickle.load(open(os.path.join(BASE_DIR, "models", "dt_model.pkl"), "rb"))
+imputer = pickle.load(open(os.path.join(BASE_DIR, "models", "imputer.pkl"), "rb"))
+scaler = pickle.load(open(os.path.join(BASE_DIR, "models", "scaler.pkl"), "rb"))dt_model = pickle.load(open("models/dt_model.pkl", "rb"))
 scaler = pickle.load(open("models/scaler.pkl", "rb"))
 imputer = pickle.load(open("models/imputer.pkl", "rb"))
 
